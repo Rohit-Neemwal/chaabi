@@ -45,7 +45,7 @@ def process_text_function(query):
 
     custom_prompt = """
     use the context and provide the helpful answers. context is from online store product and you are asked
-    to answer the query by the user appropiately. and present all the attributes(price, name,company etc.) of context in good way if necessary.if 
+    to answer the query by the user appropiately and present  the attributes(price, name,company , little description etc.) if required of product in good way if necessary.if 
     you don't know what to answer. then simply suggest another product.
     Context: {0}
 
@@ -57,7 +57,7 @@ def process_text_function(query):
 
     client = OpenAI(
         # defaults to os.environ.get("OPENAI_API_KEY")
-    api_key = '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',
+    api_key = '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',
     )
 
     chat_completion = client.chat.completions.create(
