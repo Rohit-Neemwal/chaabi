@@ -21,9 +21,10 @@ INSTALL DEPENDENCIES FROM PIP
  API KEY OF OPENAI is not stable. it get disabled after some time. **SO use YOUR API KEY OF OPENAI**
  -------------------------------------------------
 
- where is OPENAI KEY is used ( if someone wants to run it then please enter your openAI key) 
+ ( if someone wants to run it then please enter your openAI key) 
  QDRANT database key is also embedded in the code. No need to change that key.
 
+ OPENAI KEY IS USED IN 
  - in python notebook file .
  - in django ** chaabi/views.py** file
 
