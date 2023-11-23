@@ -41,7 +41,33 @@ INSTALL DEPENDENCIES FROM PIP
    7) then start asking queries.
       
 
+################################################################################################################
+SAMPLE RESULTS : -  ( ARE IN RESULTS FOLDER ) 
 
- 
+QUERY : groceries like wheat
 
-  
+Response : 
+
+Based on your query for groceries like wheat, I have found a few options for you:
+
+1. Bagrrys Wheat Bran - Germinated:
+   - Brand: Bagrrys
+   - Category: Snacks & Branded Foods
+   - Description: Wheat Bran is the richest source of insoluble fibre. It is a boon for weight watchers and helps in reducing the risk of colon and rectum cancer. Add this to your atta and make it a part of your daily diet.
+   - Market Price: $99
+   - Rating: 4.3
+
+2. bb Royal Wheat - Whole:
+   - Brand: bb Royal
+   - Category: Foodgrains, Oil & Masala
+   - Description: Whole wheat light brown coloured spindle-shaped, tough, starchy and rich-tasting husked kernels of the wheat crop. Naturally low in gluten and has a low glycemic index. It is naturally rich in fiber, vitamins, minerals, and other nutrients. Wheat is a part of our daily diet and can be used to make different baked goods and bread.
+   - Market Price: $275
+   - Sale Price: $234
+   - Rating: 4.1
+
+Please let me know if you would like more information on any of these products or if you have any other queries.
+
+------------------------------------------------------
+QUERY : I WANT TUBELIGHT FOR MY ROOM
+
+Response :  recommend considering the Crompton Light Linea 20 W CDL Batten lamp. It is a highly energy-efficient product that provides the right amount of light for a warm and comfortable ambiance in your room. It offers glare-free illumination, keeping your eyes strain-free. The slim design of the product adds visual appeal to your room. Additionally, it is shockproof and has a long life. It comes with a 1-year warranty for your peace of mind. The sale price of this tubelight is $275.
