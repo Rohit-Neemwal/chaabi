@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analyzer</title>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #textForm {
+            height: 40%;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #textInput {
+            width: 80%;
+            height: 70%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #loading {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #processedTextContainer {
+            /* display: none; */
+            margin-top: 20px;
+            height : 40%;
+            width: 70%;
+            text-align: center;
+        }
+
+        #processedText {
+            width: 100%;
+            height : 100%;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Find Your Product</h1>
+    <form id="textForm">
+        <textarea id="textInput" placeholder="Enter your text here..."></textarea>
+        <button type="button" onclick="analyzeText()">Find Product</button>
+    </form>
+
+    <div id="loading" class="spinner"></div>
+
+    <div id="processedTextContainer">
+        <p>Response Text</p>
+        <textarea id="processedText" readonly></textarea>
+    </div>
+    <script>
+        function analyzeText() {
+            var userText = $('#textInput').val().trim();  // Trim leading and trailing whitespaces
+    
+            // Validate if the user entered text
+            if (!userText) {
+                alert('Please enter text before analyzing.');
+                return;
+            }
+    
+            var loading = $('#loading');
+    
+            // Show loading spinner
+            loading.show();
+    
+            // Use Ajax to send the text to the backend
+            $.ajax({
+                url: '/removepunc',
+                type: 'get',
+                data: { text: userText },
+                success: function(response) {
+                    // Update the processed text in the text area
+                    $('#processedText').val(response.processed_text);
+                    console.log(response.processed_text);
+                    $('#processedTextContainer').show();
+    
+                    // Hide loading spinner
+                    loading.hide();
+                },
+                error: function(error) {
+                    console.error('Error:', error);
+    
+                    // Hide loading spinner on error
+                    loading.hide();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
