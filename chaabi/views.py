@@ -8,6 +8,7 @@ from sentence_transformers import SentenceTransformer
 from openai import OpenAI
 
 encoder = SentenceTransformer('all-MiniLM-L6-v2')
+openai_api_key = "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"
 
 qdrant= QdrantClient(
     url="https://a8ddd992-7d4b-450a-a29e-0d2a3502f278.us-east4-0.gcp.cloud.qdrant.io:6333",
@@ -57,7 +58,7 @@ def process_text_function(query):
 
     client = OpenAI(
         # defaults to os.environ.get("OPENAI_API_KEY")
-    api_key = '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',
+    api_key = openai_api_key,
     )
 
     chat_completion = client.chat.completions.create(
